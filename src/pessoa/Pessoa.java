@@ -2,5 +2,10 @@ package pessoa;
 import instituicao.Instituicao;
 
 public abstract class Pessoa {
-    private Instituicao instituicao;
+    protected Instituicao instituicao;
+    protected String nome;
+    
+    public String getNome() {
+        return nome;
+    }
 }
