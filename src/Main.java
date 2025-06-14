@@ -14,7 +14,7 @@ public class Main {
         equipe.addEstudante(new Estudante("Pedro", universidade));
         equipe.addEstudante(new Estudante("Ana", universidade));
         equipe.addEstudante(new Estudante("Lucas", universidade));
-        Equipes.getInstance().getEquipes().add(equipe);
+        Equipes.getInstance().addEquipe(equipe);
 
         equipe = new Equipe();
         universidade = new Universidade("PUC Minas - Sao Gabriel");
@@ -23,16 +23,16 @@ public class Main {
         equipe.addEstudante(new Estudante("Paulo", universidade));
         equipe.addEstudante(new Estudante("Amanda", universidade));
         equipe.addEstudante(new Estudante("Luciano", universidade));
-        Equipes.getInstance().getEquipes().add(equipe);
+        Equipes.getInstance().addEquipe(equipe);
 
         //Adciona 1 projeto diferente para cada equipe
 
         Instituicao instituicao = new Empresa("Tech Solutions");
         Profissional orientador = new Profissional("Dr. Silva", instituicao);
-        Projetos.getInstance().getProjetos().add(new Projeto("Projeto 1", orientador, Equipes.getInstance().getEquipes().get(0)));
+        Projetos.getInstance().addProjeto(new Projeto("Projeto 1", orientador, Equipes.getInstance().getEquipes().get(0)));
         
         orientador = new Profissional("Dr. Andrade", instituicao);
-        Projetos.getInstance().getProjetos().add(new Projeto("Projeto 2", orientador, Equipes.getInstance().getEquipes().get(1)));
+        Projetos.getInstance().addProjeto(new Projeto("Projeto 2", orientador, Equipes.getInstance().getEquipes().get(1)));
 
         //Criar 1 banca avaliadora para cada projeto (Cada banca deve conter 4 jurados)
 
@@ -63,16 +63,16 @@ public class Main {
 
         //Configurar notas dos jurados para cada projeto (cada jurado deve dar uma nota de 0 a 10)
         banca = Bancas.getInstance().getBancas().get(0);
-        banca.setNotaJurado(banca.getJurado("Jurado 1"), 8);
-        banca.setNotaJurado(banca.getJurado("Jurado 2"), 9);
-        banca.setNotaJurado(banca.getJurado("Jurado 3"), 8);
-        banca.setNotaJurado(banca.getJurado("Jurado 4"), 10);
+        banca.setNotaJurado("Jurado 1", 8);
+        banca.setNotaJurado("Jurado 2", 9);
+        banca.setNotaJurado("Jurado 3", 8);
+        banca.setNotaJurado("Jurado 4", 10);
 
         banca = Bancas.getInstance().getBancas().get(1);
-        banca.setNotaJurado(banca.getJurado("Jurado 5"), 6);
-        banca.setNotaJurado(banca.getJurado("Jurado 6"), 8);
-        banca.setNotaJurado(banca.getJurado("Jurado 7"), 7);
-        banca.setNotaJurado(banca.getJurado("Jurado 8"), 6);
+        banca.setNotaJurado("Jurado 5", 6);
+        banca.setNotaJurado("Jurado 6", 8);
+        banca.setNotaJurado("Jurado 7", 7);
+        banca.setNotaJurado("Jurado 8", 6);
 
         //Calcula a nota final de cada projeto a partir da apresentação (considere a media das notas dos jurados)
         Apresentacoes.getInstance().avaliarTodos();

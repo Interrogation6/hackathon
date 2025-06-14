@@ -21,4 +21,16 @@ public class Equipes {
     public List<Equipe> getEquipes() {
         return equipes;
     }
+
+    public void addEquipe(Equipe equipe) {
+        this.equipes.add(equipe);
+    }
+
+    public void removeEquipe(Equipe equipe) {
+        if (!this.equipes.contains(equipe)) {
+            System.out.println("Equipe não encontrada.");
+            return;
+        }
+        this.equipes.remove(equipe);
+    }
 }

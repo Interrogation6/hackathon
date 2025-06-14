@@ -31,15 +31,18 @@ public class Banca implements Avaliavel{
         return null; // Retorna null se o jurado não for encontrado
     }
 
-    public void setNotaJurado(Jurado jurado, int nota) {
+    public void setNotaJurado(String nomeJurado, int nota) {
         if(nota < 0 || nota > 10) {
             System.out.println("Nota inválida. Deve ser entre 0 e 10.");
             return;
         }
+        Jurado jurado = getJurado(nomeJurado);
+        if (jurado == null) {
+            System.out.println("Jurado não encontrado na banca.");
+            return;
+        }
         if (jurados.containsKey(jurado)) {
             jurados.put(jurado, nota);
-        } else {
-            System.out.println("Jurado não encontrado na banca.");
         }
     }
 
