@@ -1,5 +1,9 @@
 package pessoa;
 
-public class Jurado extends Profissional{
+import instituicao.Instituicao;
 
+public class Jurado extends Profissional{
+    public Jurado(String nome, Instituicao instituicao) {
+        super(nome, instituicao);
+    }
 }

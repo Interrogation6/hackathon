@@ -20,4 +20,10 @@ public class Apresentacoes {
     public List<Apresentacao> getApresentacoes() {
         return apresentacoes;
     }
+
+    public void avaliarTodos() {
+        for (Apresentacao apresentacao : apresentacoes) {
+            apresentacao.avaliar();
+        }
+    }
 }
